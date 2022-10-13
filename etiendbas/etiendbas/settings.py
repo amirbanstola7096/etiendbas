@@ -86,3 +86,15 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+import os
+
+data_folder = 'data'
+
+# if does not exist, create it
+if not os.path.exists(data_folder):
+    os.makedirs(data_folder)
+
+    
+FEED_FORMAT = 'csv'
+FEED_URI = f'data/{BOT_NAME}.csv'
+FEED_EXPORT_ENCODING = "utf-8-sig"
